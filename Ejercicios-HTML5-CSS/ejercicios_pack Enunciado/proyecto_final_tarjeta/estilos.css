@@ -1,0 +1,226 @@
+:root {
+    --primary: #6366f1;
+    --secondary: #ec4899;
+    --accent: #8b5cf6;
+    --text: #1e293b;
+    --white: #ffffff;
+    --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f9ff;
+    color: var(--text);
+    line-height: 1.6;
+    max-width: 56.25rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+/* Header */
+header {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+    border-top: 0.3125rem solid var(--primary);
+}
+
+h1 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+img {
+    width: 9.375rem;
+    height: 9.375rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 0.25rem solid var(--white);
+    box-shadow: 0 0 0 0.25rem var(--primary);
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+/* Main Layout (Grid) - 66%/33% ratio */
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Sections with distinct colors */
+section {
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+section:hover {
+    transform: translateY(-0.1875rem);
+}
+
+#sobre-mi {
+    background-color: #eef2ff;
+    border-left: 0.3125rem solid var(--primary);
+}
+
+#habilidades {
+    background-color: #fdf2f8;
+    border-left: 0.3125rem solid var(--secondary);
+}
+
+#contacto {
+    background-color: #f5f3ff;
+    border-left: 0.3125rem solid var(--accent);
+    grid-column: 1 / -1;
+}
+
+/* Skills - Improved styling */
+#habilidades ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+#habilidades li {
+    background: var(--white);
+    padding: 0.875rem 1.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--primary);
+    font-weight: 600;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+    border-left: 0.25rem solid var(--secondary);
+    transition: all 0.2s ease;
+}
+
+#habilidades li:hover {
+    transform: translateX(0.375rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.12);
+    background: linear-gradient(to right, #fdf2f8, var(--white));
+}
+
+/* Form */
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+label {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 0.125rem solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--white);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.1875rem rgba(99, 102, 241, 0.2);
+}
+
+input:valid {
+    border-color: #10b981;
+}
+
+input:not(:placeholder-shown):invalid {
+    border-color: #ef4444;
+}
+
+button {
+    background: var(--gradient);
+    color: var(--white);
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    justify-self: start;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 48rem) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}

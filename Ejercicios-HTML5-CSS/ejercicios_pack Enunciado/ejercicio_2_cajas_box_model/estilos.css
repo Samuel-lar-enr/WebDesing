@@ -1,0 +1,91 @@
+/* EJERCICIO 3: FORMULARIO
+   Nombre: [Samuel Lara]
+*/
+
+
+/* RESETEO BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Buena práctica moderna */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background-color: #f5f5f5;
+}
+
+/* 
+   CAJA 1: Content-box (modo por defecto)
+   */
+/* Cálculo del ancho total:
+   Contenido: 300px
+   Padding izquierdo: 20px
+   Padding derecho: 20px
+   Border izquierdo: 5px
+   Border derecho: 5px
+   TOTAL: 350px
+*/
+.caja1 {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #333;
+    background-color: #e3f2fd;
+    box-sizing: content-box;
+}
+
+/* 
+   CAJA 2: Border-box (modo recomendado)
+   */
+/* Cálculo del ancho total:
+   Width especificado: 300px (incluye padding y border)
+   Padding izquierdo: 20px
+   Padding derecho: 20px
+   Border izquierdo: 5px
+   Border derecho: 5px
+   Ancho de contenido real: 300 - 20 - 20 - 5 - 5 = 250px
+   TOTAL: 300px
+*/
+.caja2 {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #333;
+    background-color: #fff3e0;
+    box-sizing: border-box;
+}
+
+/* 
+   CAJA 3: Centrada horizontalmente
+   */
+/* Configuración:
+   Width: 400px
+   Padding: 30px
+   Border: 3px solid #4caf50
+   Box-sizing: border-box
+   Margin: 0 auto -> centra horizontalmente
+*/
+.caja3 {
+    width: 400px;
+    padding: 30px;
+    border: 3px solid #4caf50;
+    background-color: #f1f8e9;
+    box-sizing: border-box;
+    margin: 0 auto ; /* Centrado horizontal */
+}
+
+
+/* 1. Diferencia entre margin y padding:
+   - padding crea espacio dentro del elemento, entre el contenido y el borde.
+   - margin crea espacio fuera del elemento, separándolo de otros elementos.
+*/
+
+/* 2. Por qué border-box es más fácil de trabajar:
+   - Con border-box, el width incluye contenido + padding + border.
+   - Esto hace que los cálculos sean más predecibles y el diseño más sencillo.
+*/
+
+/* 3. Qué pasa si intentas centrar un elemento sin width:
+   - margin: 0 auto no funciona correctamente si el elemento no tiene un ancho definido.
+   - El navegador no sabe qué parte del espacio disponible repartir, así que no se centra.
+*/
