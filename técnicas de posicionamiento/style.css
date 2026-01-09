@@ -14,6 +14,14 @@ nav{
     padding: 0.5rem;
     position: absolute ;
 }
+a{
+    color: brown;
+    text-decoration: none;
+}
+p{
+    padding: 0;
+    margin: auto;
+}
 footer{
     position: fixed;
     bottom: 0;

@@ -1,0 +1,31 @@
+.columna1 {
+    display: grid;
+    width: 100%;
+    height: 200px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    grid-area: auto;
+
+}
+
+/*Grid de 3 columnas 1 linea*/
+.columna2 {
+    display: grid;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 50px;
+    grid-area: auto;
+}
+
+.columna3 {
+    display: grid;
+    width: 100%;
+    height: 150px;
+    background-color: purple;
+    grid-area: auto;
+
+}
