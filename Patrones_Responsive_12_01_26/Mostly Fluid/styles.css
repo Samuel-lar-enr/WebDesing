@@ -1,0 +1,65 @@
+/* Mostly Fluid */
+.container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.columna1 {
+  background-color: #e34747;
+}
+
+.columna2 {
+  background-color: #47e351;
+}
+
+.columna3 {
+  background-color: #0c10df;
+}
+
+.columna4 {
+  background-color: #d8790b;
+}
+
+.columna5 {
+  background-color: #ea0495;
+}
+
+.columna1,
+.columna2,
+.columna3,
+.columna4,
+.columna5 {
+  width: 100%;
+  height: 100px;
+}
+
+@media (min-width: 600px) {
+  .columna2,
+  .columna3,
+  .columna4,
+  .columna5 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 800px) {
+  .columna1 {
+    width: 60%;
+  }
+  .columna2 {
+    width: 40%;
+  }
+  .columna3,
+  .columna4,
+  .columna5 {
+    width: 33.3%;
+  }
+
+  .container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
