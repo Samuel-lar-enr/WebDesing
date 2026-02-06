@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 - Box Model</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="font-[Plus_Jakarta_Sans] h-screen">
+
+    <div class="text-center w-1/2 bg-amber-300">
+        <h1 class="text-5xl">Mitad de ancho</h1>
+    </div>
+
+    <div class="w-1/2 bg-amber-300">
+        <!-- La imagen ocupará el 100% del ancho de SU PADRE (el 50% de la pantalla) -->
+        <img src="https://picsum.photos/800/400" class="w-full" alt="Paisaje">
+    </div>
+
+    <div class="bg-blue-500 p-10">
+        <p class="bg-white">Contenido con padding de 40px alrededor</p>
+    </div>
+
+    <div class="w-1/2 mx-auto bg-amber-300">
+        Este div estará centrado horizontalmente
+    </div>
+
+    <div class="border-4 border-blue-500 border-dashed">
+        Borde azul discontinuo
+    </div>
+
+    <nav class="space-y-4">
+        <a href="#" class="bg-slate-800 px-8 py-4 block">Inicio</a>
+        <a href="#" class="bg-slate-800 px-8 py-4 block">Acerca de</a>
+        <a href="#" class="bg-slate-800 px-8 py-4 block">Contacto</a>
+    </nav>
+
+    <nav class="flex divide-x-10 divide-lime-500 divide-dotted">
+        <a href="#" class="px-8 py-4">Inicio</a>
+        <a href="#" class="px-8 py-4">Acerca de</a>
+        <a href="#" class="px-8 py-4">Contacto</a>
+    </nav>
+
+    <!-- Ejemplo Completo: Card con Tailwind -->
+    <div class="w-md mx-auto my-20 border-2 border-gray-500/50 py-7 px-5 rounded-2xl space-y-8">
+      <img src="https://picsum.photos/400/300" class="w-full h-60 object-cover rounded-md" alt="">
+      <h3 class="text-3xl font-bold my-6">¡Título Card!</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut fuga temporibus consectetur libero impedit a
+        provident sed exercitationem, praesentium quam ea accusamus voluptatem unde? Est rem quod dignissimos sint
+        tempora.
+      </p>
+      <a href="#" class="block bg-blue-600 text-white text-center py-4 rounded-full">Leer más</a>
+    </div>
+
+</body>
+</html>

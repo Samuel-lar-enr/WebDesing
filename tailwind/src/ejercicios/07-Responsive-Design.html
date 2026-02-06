@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 - Responsive Design</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <nav class="bg-slate-800 sm:bg-red-500 md:bg-green-500 lg:bg-blue-500 p-4 text-white">
+        Fondo cambia con el tamaño de pantalla
+    </nav>
+
+    <!-- Ejemplo: Navbar Mobile-First -->
+    <nav class="h-auto bg-slate-800
+                flex flex-col gap-5
+                items-center justify-between
+                py-6 px-10
+                md:flex-row md:h-20 mt-10">
+       
+       <div class="bg-white p-2">Logo</div>
+       
+       <div class="text-white flex gap-10 order-1 md:order-0">
+         <a href="#">Inicio</a>
+         <a href="#">Acerca de</a>
+         <a href="#">Contacto</a>
+       </div>
+       
+       <a href="#" class="bg-amber-700 text-white px-7 py-3 rounded-lg">Contáctame</a>
+    </nav>
+
+    <div class="sm:max-lg:bg-red-400 p-10 mt-10">
+        Fondo rojo SOLO cuando: ≥640px Y <1024px
+    </div>
+
+    <!-- Ejemplo Práctico Completo -->
+    <div class="
+        w-full p-4 bg-blue-500 mt-10
+        sm:w-3/4 sm:p-6 sm:bg-green-500
+        md:w-1/2 md:p-8 md:bg-yellow-500
+        lg:w-1/3 lg:p-10 lg:bg-red-500
+        mx-auto
+    ">
+        <h2 class="text-xl md:text-3xl lg:text-5xl text-white">
+            Título Responsive
+        </h2>
+    </div>
+
+</body>
+</html>

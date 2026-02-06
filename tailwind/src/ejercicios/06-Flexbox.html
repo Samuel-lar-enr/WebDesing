@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 - Flexbox</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <nav class="flex flex-col">
+        <!-- Los elementos se apilan verticalmente -->
+        <div>Item 1</div>
+        <div>Item 2</div>
+    </nav>
+
+    <nav class="h-20 flex items-center">
+        <!-- Todos los hijos estarán centrados verticalmente -->
+        <div class="bg-red-500 w-10 h-10"></div>
+    </nav>
+
+    <div class="flex gap-10">
+        <a href="#">Inicio</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Contacto</a>
+    </div>
+
+    <!-- Ejemplo Completo: Navbar con Flexbox -->
+    <nav class="h-20 bg-slate-800 flex items-center justify-between px-10">
+       <div class="bg-white w-10 h-10">Logo</div> <!-- Simplified logo -->
+       
+       <div class="text-white flex gap-10">
+         <a href="#">Inicio</a>
+         <a href="#">Acerca de</a>
+         <a href="#">Contacto</a>
+       </div>
+       
+       <a href="#" class="bg-amber-700 text-white px-7 py-3 rounded-lg">Contáctame</a>
+    </nav>
+
+    <div class="flex">
+        <div class="order-1 bg-red-500">Segundo (visualmente)</div>
+        <div class="bg-blue-500">Primero (order-0 por defecto)</div>
+    </div>
+
+    <div class="flex flex-wrap gap-4">
+        <div class="bg-gray-200 p-4 w-64">Item 1</div>
+        <div class="bg-gray-200 p-4 w-64">Item 2</div>
+        <div class="bg-gray-200 p-4 w-64">Item 3</div>
+    </div>
+
+</body>
+</html>
