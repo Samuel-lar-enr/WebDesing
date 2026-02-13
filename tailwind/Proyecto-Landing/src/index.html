@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<header class="bg-black rounded p-2 flex justify-between items-center relative z-50">
+    <h2 class="text-white text-2xl font-bold text-left ml-4">CodeCraftGPT</h2>
+    
+    <!-- Botones Desktop/Tablet (Visibles en md+) -->
+    <div class="hidden md:flex items-center gap-6 mr-4">
+        <a href="#" class="text-white font-bold hover:text-gray-300 transition">Acerca de</a>
+        <button class="open-modal-btn text-black bg-white rounded-full px-6 py-2 font-bold hover:scale-105 transition">Ingresa al curso</button>
+    </div>
+
+    <!-- Botón Hamburguesa (Solo visible en móviles/sm) -->
+    <button id="menu-btn" class="text-white p-2 focus:outline-none md:hidden mr-4">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+</header>
+
+<!-- Menú Pantalla Completa (Oculto por defecto, slide down) -->
+<div id="mobile-menu" class="fixed inset-0 bg-black z-40 transform -translate-y-full transition-transform duration-500 ease-in-out flex flex-col items-center justify-center gap-8 md:hidden">
+    <!-- Opcional: Espacio para no tapar el header si se desea, o padding -->
+    <button class="text-white text-2xl font-bold hover:text-gray-300 transition">Acerca de</button>
+    <button class="open-modal-btn text-black bg-white rounded-full p-4 text-xl font-bold hover:scale-105 transition">Ingresa al curso</button>
+</div>
+<body class="bg-black">
+
+    <section>
+        <div class="hero-bg flex flex-col items-center justify-center opacity-90 m-4 rounded-2xl shadow-2xl
+                    py-20 px-4 
+                    md:py-32 md:px-10 
+                    lg:items-start lg:justify-end lg:py-20 lg:px-20 lg:min-h-[600px] lg:text-left">
+            
+            <div class="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <h1 class="text-4xl lg:text-6xl font-bold text-white">Domina CSS desde cero</h1>
+                <p class="text-white mt-4 p-2 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                <button class="open-modal-btn text-black bg-white rounded-full p-4 mt-4 font-bold hover:scale-105 transition">Inscribirse ahora</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="text-left m-2 p-2">
+            <h2 class="text-white font-bold text-3xl md:text-4xl">¿Qué aprenderás?</h2>
+            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+        </div>
+        <div class="flex flex-wrap gap-6 p-6 w-full justify-center">
+  
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg hover:scale-105 transition transform w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex flex-col items-start text-left">
+                <img src="./img/code-alt.svg" alt="CSS" class="w-12 h-12 mb-4">
+                <h3 class="text-white text-xl font-semibold mb-2">CSS</h3>
+                <p class="text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg hover:scale-105 transition transform w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex flex-col items-start text-left">
+                <img src="./img/file.svg" alt="CSS" class="w-12 h-12 mb-4">
+                <h3 class="text-white text-xl font-semibold mb-2">CSS</h3>
+                <p class="text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg hover:scale-105 transition transform w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex flex-col items-start text-left">
+                <img src="./img/palette.svg" alt="CSS" class="w-12 h-12 mb-4">
+                <h3 class="text-white text-xl font-semibold mb-2">CSS</h3>
+                <p class="text-gray-300">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    </section>
+
+    <!-- Modal Formulario -->
+    <div id="registration-modal" class="fixed inset-0 bg-black/80 z-50 flex justify-center items-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-gray-900 p-8 rounded-2xl shadow-2xl w-full max-w-md relative border border-gray-700 mx-4">
+            <!-- Botón Cerrar -->
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <h2 class="text-2xl font-bold text-white mb-6 text-center">¡Únete al Curso!</h2>
+            
+            <form class="flex flex-col gap-4">
+                <div>
+                    <label class="block text-gray-300 mb-2 text-sm">Nombre Completo</label>
+                    <input type="text" placeholder="Ej. Juan Pérez" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:border-blue-500 focus:outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-gray-300 mb-2 text-sm">Correo Electrónico</label>
+                    <input type="email" placeholder="ejemplo@correo.com" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:border-blue-500 focus:outline-none transition">
+                </div>
+                <button type="submit" class="bg-white text-black font-bold py-3 px-6 rounded-full hover:bg-gray-200 transition mt-4">Enviar Registro</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Elementos del Modal
+        const modal = document.getElementById('registration-modal');
+        const openModalBtns = document.querySelectorAll('.open-modal-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        // Menú Hamburguesa
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-y-full');
+        });
+
+        // Abrir Modal con cualquier botón
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                // Timeout para permitir que la transición de opacidad funcione
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    if (!mobileMenu.classList.contains('-translate-y-full')) {
+                        mobileMenu.classList.add('-translate-y-full'); // Cierra menú móvil si está abierto
+                    }
+                }, 10);
+            });
+        });
+
+        // Cerrar Modal
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // Espera a que termine la transición
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Cerrar al hacer click fuera del modal
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+<footer class="bg-gray-900 w-full mt-8">
+    <div class="flex flex-wrap w-full px-6 py-6 justify-between items-center gap-4">
+      <nav class="flex-1">
+        <ul class="flex flex-wrap gap-6">
+          <li><a class="text-white hover:text-amber-400 transition" href="#">Inicio</a></li>
+          <li><a class="text-white hover:text-amber-400 transition" href="#">Cursos</a></li>
+          <li><a class="text-white hover:text-amber-400 transition" href="#">Contacto</a></li>
+          <p class="text-white">Todos los derechos reservados &copy; 2023</p>
+        </ul>
+      </nav>
+    </div>
+</footer>
+</html>
